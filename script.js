@@ -12,7 +12,9 @@ function daysLeft() {
 	var a = $( "#datepicker" ).datepicker('getDate').getTime();
 	// solutions for 9, 10, 11 and 12 go here:
 	var b = today.getTime();
-	var c = a - b; 
+	var difference = a - b; 
+	var c = 24 * 60 * 60 * 1000;
+     // (num/1000 = secnds) (num/60000 = minutes) (num/60000 = hours)
 	// var d = 
 	// var b = _____
 	// var c = _____
@@ -20,7 +22,7 @@ function daysLeft() {
 
 	// we will remove this later:
 	return a;
-};
+}
 
 
 $("#datepicker").on("change", function(a){

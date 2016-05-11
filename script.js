@@ -1,3 +1,6 @@
+$( document ).ready(function() {
+    console.log( "ready!" );
+
 // Before you begin, take a good look at index.html
 // You don't have to make any changes to that file, but you should be familiar with the structure of the file--especially its id's.
 
@@ -6,6 +9,11 @@
 
 // 1. To begin, we need a variable to reference the current time when a user loads the page.
 // Create a variable "today" as an instance of the Date object.
+
+
+
+var today = new Date();
+// console.log(today);
 
 // _____
 
@@ -17,9 +25,17 @@
 // The Date object gives us a ton of methods to get the data we want.
 // Create variables for the current date (day of the month, 1-31), current month (0-11) and current year (2015).
 // Assign values for each by calling the following methods on the today variable:
-// Date.getDate();
-// Date.getMonth();
-// Date.getFullYear();
+
+var currentDate = today.getDate();
+var currentMonth = today.getMonth();
+var currentYear = today.getFullYear();
+
+console.log(currentDate);
+console.log(currentMonth);
+console.log(currentYear);
+// var currentDate = new Date(year, month, day);
+// var todayDate = today.getUTCDate();
+// console.log(todayDate);
 
 // _____
 // _____
@@ -30,8 +46,14 @@
 // Create a month names array using the new keyword and the Array() prototype object.
 // Populate the array with three-letter string abbreviations for each month.
 
+
+var monthAbbrev = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+
+
 // _____
 
 // 4. Now we have everything we need to create our HTML string. Use jQuery's .html() method.
 
-// $("#todayDate").html(____);
+$("#todayDate").html(monthAbbrev[currentMonth] + ", " + currentDate + " , " + currentYear + "."); 
+
+});
